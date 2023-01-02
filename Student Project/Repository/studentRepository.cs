@@ -14,7 +14,19 @@ namespace Student_Project.Repository
         }
         public async Task<IEnumerable<Student>> GetAll()
         {
-            return await studentDbcontext.students.ToListAsync();
+            var record = await studentDbcontext.students.ToListAsync();
+            foreach(var i in record)
+            {
+                if(i.section=="")
+                {
+                    i.section = "NA";
+                }
+                if(i.year_of_enrollment == 0)
+                {
+                    i.year_of_enrollment = 2020;
+                }
+            }
+            return record;
             
         }
 

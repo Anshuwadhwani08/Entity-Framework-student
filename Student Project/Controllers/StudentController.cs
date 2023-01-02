@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Student_Project.Models.Domain;
 using Student_Project.Repository;
 
 namespace Student_Project.Controllers
